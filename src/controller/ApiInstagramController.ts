@@ -6,13 +6,11 @@ export class ApiInstController{
     async resgataFeedComCode(request: FastifyRequest, reply: FastifyReply){
             const paramUrl = request.query as {code:string}
             const ret = await this.service.buscarFeedUsuarioCode(paramUrl.code);
-            console.log(ret);
             reply.send(ret);
     }
     async resgataFeedComToken(request: FastifyRequest, reply: FastifyReply){
         const paramUrl = request.query as {token:string}
         const ret = await this.service.buscarFeedUsuarioToken(paramUrl.token);
-        console.log(ret);
         reply.send(ret);
 }
 }
